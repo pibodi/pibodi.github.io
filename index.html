@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="static/scripts/jquery-3.3.1.min.js" charset="utf-8"></script>
+  <script src="static/scripts/bootstrap3-typeahead.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="static/css/bootstrap.css">
+  <link rel="stylesheet" href="static/css/stylesheet.css">
+  <link rel="stylesheet" href="static/css/style.css">
+  <title>Document</title>
+</head>
+<body>
+  <div id="weather" class="container">
+    <h1>My weather</h1>
+    <div class="container">
+      <div class=" inputsGroup container col-xs-12 col-sm-8 col-md-4 col-lg-4 col-sm-offset-2 col-md-offset-4 col-lg-offset-4  ">
+        <input id="choiseCityName"  type="text"  value="" data-provide="typeahead">
+        <button id="getCity" class="btn" type="button" name="button">Выбрать</button>
+        <button id="myGeoWeather" class="btn " type="button" name="button"></button>
+      </div>
+      <div class="currentWeather container  col-xs-12 col-sm-6 col-md-4 col-lg-4  col-sm-offset-3 col-md-offset-4 col-lg-offset-4">
+        <div id="indicators" class=" col-xs-6 col-sm-6 col-md-6 col-lg-4">
+          <div id="temperature"></div>
+          <div id="humidity"></div>
+          <div id="description"></div>
+        </div>
+        <div id="icon" class="col-xs-6 col-sm-6 col-md-6 col-lg-4 col-lg-offset-2">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+  <script src="static/scripts/script.js" charset="utf-8"></script>
+  <script src="static/scripts/myTypeAheadScript.js" charset="utf-8" async></script>
+</body>
+</html>

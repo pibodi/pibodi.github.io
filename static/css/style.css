@@ -1,0 +1,53 @@
+html {
+  height: 100%;
+  background-color: #fff;
+}
+body {
+  height: 100%;
+}
+h1 {
+  text-align: center;
+}
+.currentWeather {
+  border: 1px solid #fff
+}
+#weather {
+  background-color: #70adb3;
+  height: 100%;
+}
+#myGeoWeather {
+  width: 40px;
+  height: 40px;
+  background: url(../img/geop.png) no-repeat 50% 50%;
+  border-radius: 50px;
+}
+#choiseCityName {
+  height: 30px;
+  border: none;
+}
+#getCity {
+  padding: 2px 12px;
+}
+#indicators > div{
+text-align: center;
+height: 20px;
+
+}
+#indicators {
+  float: left;
+  margin-top: 5px;
+}
+.inputsGroup {
+  text-align: center;
+  margin-top: 20px;
+}
+#icon {
+  text-align: center;
+  float: right;
+}
+[data-icon]:before {
+	font-family: 'MeteoconsRegular';
+	content: attr(data-icon);
+  font-size: 50px;
+
+}
