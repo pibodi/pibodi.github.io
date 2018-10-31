@@ -17,8 +17,8 @@ var weather = {
         +'&units=metric&lang=ru&appid=b231606340553d9174136f7f083904b3';
         this.getRequest(link);
        }
-        navigator.geolocation.clearWatch(this.id)
-          return this.id = navigator.geolocation.watchPosition(getPosition);
+
+          return  navigator.geolocation.getCurrentPosition(getPosition);
 
   },
   getRequest: function(link) {
@@ -47,8 +47,7 @@ var weather = {
       var link = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&units=metric&lang=ru&appid=b231606340553d9174136f7f083904b3';
       return this.getRequest(link);
   }
-    navigator.geolocation.clearWatch(this.id)
-    return this.id = navigator.geolocation.watchPosition(getPosition);
+    return getPosition();
   }
 };
 // Functions
