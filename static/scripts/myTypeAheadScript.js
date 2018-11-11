@@ -1,26 +1,25 @@
-// $(document).ready(function() {
-//     $('#choiseCityName').typeahead({
-//         autoSelect: true,
-//         minLength: 1,
-//         delay: 40,
-//         source: function (query, process) {
-//             $.ajax({
-//                 url: 'city.list.json',
-//                 data: {query: query}
-//             }).done(function(response) {
-//                 // get the response and create a new array of Strings
-//
-//                   var names = $.each (response, function(item) {
-//                     var div = document.createElement('div');
-//                     div.innerText = item.name
-//                     console.log(item.name);
-//                     return item.name;
-//                   });
-//                   return process(names);
-//                 });
-//               }
-//             });
-//           });
-
-
-// $('#getCity').click(weather.showCityWeather())
+var $input = $('.typeahead');
+var $drpdItem
+$input.typeahead({
+  minLength: 2,
+  source: $.get("cities.json", function(data){
+  $("#choiseCityName").typeahead({ source:data,
+    displayText: function (item) {
+    	return item.name;
+    },
+    afterSelect: function(item) {
+      $('#choiseCityName').on('keyup',function(e) {
+       e = e || window.event;
+       if (e.keyCode === 13) {
+         $input.val(item.name)
+          return weather.showCityWeather($input.val());
+       }
+       return false;
+   });
+      return weather.showCityWeather($input.val())
+    },
+    highlighter: function(item, data) {
+        return `<div> ${item} <strong>${data.country}</strong></div>`
+    }
+   });
+},'json')});

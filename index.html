@@ -13,28 +13,27 @@
 </head>
 <body>
   <div id="weather" class="container">
-    <h1>My weather</h1>
+    <div id="header">
+      <h1>My weather</h1>
+      <button id="myGeoWeather" class="btn " type="button" name="button"></button>
+    </div>
     <div class="container">
       <div class=" inputsGroup container col-xs-12 col-sm-8 col-md-4 col-lg-4 col-sm-offset-2 col-md-offset-4 col-lg-offset-4  ">
-        <input id="choiseCityName"  type="text"  value="" data-provide="typeahead">
-        <button id="getCity" class="btn" type="button" name="button">Выбрать</button>
-        <button id="myGeoWeather" class="btn " type="button" name="button"></button>
+        <input id="choiseCityName"  class="col-xs-6 col-sm-8 col-md-8 col-lg-8  typeahed" type="text"  value="" data-provide="typeahead">
+        <button id="getCityWeather" class="btn col-xs-5 col-sm-3 col-md-3 col-lg-3 col-xs-offset-1" type="button" name="button" >Выбрать</button>
       </div>
       <div class="currentWeather container  col-xs-12 col-sm-6 col-md-4 col-lg-4  col-sm-offset-3 col-md-offset-4 col-lg-offset-4">
-        <div id="indicators" class=" col-xs-6 col-sm-6 col-md-6 col-lg-4">
+        <div id="indicators" class=" col-xs-7 col-sm-7 col-md-7 col-lg-7">
+          <div id="cityName"></div>
           <div id="temperature"></div>
           <div id="humidity"></div>
           <div id="description"></div>
         </div>
-        <div id="icon" class="col-xs-6 col-sm-6 col-md-6 col-lg-4 col-lg-offset-2">
-          </div>
-        </div>
+        <div id="icon" class="col-xs-5 col-sm-5 col-md-5 col-lg-5 "></div>
       </div>
     </div>
-
   </div>
-</div>
   <script src="static/scripts/script.js" charset="utf-8"></script>
-  <script src="static/scripts/myTypeAheadScript.js" charset="utf-8" async></script>
+  <script src="static/scripts/myTypeAheadScript.js" charset="utf-8"></script>
 </body>
 </html>

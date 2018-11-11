@@ -5,28 +5,44 @@ html {
 body {
   height: 100%;
 }
-h1 {
-  text-align: center;
-}
-.currentWeather {
-  border: 1px solid #fff
-}
+
+
 #weather {
   background-color: #70adb3;
   height: 100%;
+}
+#header {
+  width: 240px;
+position: relative;
+margin: 0 auto;
 }
 #myGeoWeather {
   width: 40px;
   height: 40px;
   background: url(../img/geop.png) no-repeat 50% 50%;
   border-radius: 50px;
+  position: absolute;
+    top: -2px;
+    right: 10px;
+
 }
 #choiseCityName {
   height: 30px;
   border: none;
 }
-#getCity {
-  padding: 2px 12px;
+
+.dropdown-item > div > strong{
+    float: right;
+    color: #c1c1c1
+}
+
+#getCityWeather {
+  padding: 4px 12px;
+  background-color: #e0e0e0;
+}
+.currentWeather {
+  border: 1px solid #fff;
+  margin-top: 15px;
 }
 #indicators > div{
 text-align: center;
@@ -40,6 +56,7 @@ height: 20px;
 .inputsGroup {
   text-align: center;
   margin-top: 20px;
+  padding: 0px;
 }
 #icon {
   text-align: center;
@@ -48,6 +65,26 @@ height: 20px;
 [data-icon]:before {
 	font-family: 'MeteoconsRegular';
 	content: attr(data-icon);
-  font-size: 50px;
+  font-size: 60px;
+}
+textarea,
+input[type="text"],
+input[type="button"],
+input[type="submit"] {
+     -webkit-appearance: none;
+     border-radius: 0;
+}
 
+@-webkit-keyframes shaker {
+	0% { -webkit-transform: translate(2px, 0); }
+	50% { -webkit-transform: translate(-1px, 0); }
+	100% { -webkit-transform: translate(2px, 0); }
+}
+
+.shake {
+	-webkit-animation-name: shaker;
+	-webkit-animation-duration: 0.1s;
+	-webkit-transform-origin:50% 50%;
+	-webkit-animation-timing-function: linear;
+  background-color: #c0392b;
 }

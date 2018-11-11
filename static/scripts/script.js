@@ -1,53 +1,42 @@
-'use strict'
+
 window.onload = function() {
     weather.showWeather();
-}
-
-// Weather obj
+     shake(myGeoWeather);
+};
+// Weather object
 var weather = {
-  id: 0,
-  showWeather: function() {
-       var target = {
-         latitude: 0,
-         longitude: 0
-      };
-       var getPosition = (position) => {
-        var link = 'https://api.openweathermap.org/data/2.5/weather?lat='
-        + position.coords.latitude + '&lon=' + position.coords.longitude
-        +'&units=metric&lang=ru&appid=b231606340553d9174136f7f083904b3';
+  showWeather() {
+        var getPosition = (position) => {
+        var link = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=b231606340553d9174136f7f083904b3`;
         this.getRequest(link);
        }
-
-          return  navigator.geolocation.getCurrentPosition(getPosition);
-
+      return navigator.geolocation.getCurrentPosition(getPosition);
   },
-  getRequest: function(link) {
-    var $this = this;
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', link , true)
-    xhr.onreadystatechange = function(e) {
-      if (this.readyState == 4) {
-        if(this.status == 200) {
-          var response = JSON.parse(this.responseText);
-          $this.showWeatherData(response);
-          }
-        }
-      }
-    xhr.send(null);
+  getRequest(link) {
+         fetch(link).then( response => {
+            if (response.ok) {
+              return response.json();
+            }
+              throw new Error(`Error: status ${response.status}.`);
+            }).then(response => {
+              return this.showWeatherData(response);
+            })
   },
-  showWeatherData: function(response) {
+  showWeatherData(response) {
+    var descrpt = response.weather[0].description;
+    descrpt =  descrpt[0].toUpperCase() + descrpt.slice(1);
+    var responseTemplate = `
+      <div id="cityName">${response.name}</div>
+      <div id="temperature">${response.main.temp} &deg;C</div>
+      <div id="humidity">Hymidity: ${response.main.humidity} %</div>
+      <div id="description"> ${descrpt} </div>
+      `;
     showIcon(response);
-    temperature.innerHTML = response.main.temp + " &deg;C";
-    humidity.innerHTML = response.main.humidity;
-    description.innerHTML = response.weather[0].description;
+    indicators.innerHTML = responseTemplate;
   },
-  showCityWeather: function() {
-     var getPosition = () => {
-      var cityName = choiseCityName.value;
-      var link = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&units=metric&lang=ru&appid=b231606340553d9174136f7f083904b3';
+  showCityWeather() {
+      var link = `https://api.openweathermap.org/data/2.5/weather?q=${choiseCityName.value}&units=metric&appid=b231606340553d9174136f7f083904b3`;
       return this.getRequest(link);
-  }
-    return getPosition();
   }
 };
 // Functions
@@ -73,25 +62,23 @@ var weather = {
           data = symbol;
         }
       }
-      return icon.setAttribute("data-icon", data);
+      return icon.setAttribute('data-icon', data);
       }
     }
   };
 
+    function shake(elem) {
+      setInterval(function(){
+        elem.classList.add('shake');
+        setTimeout(function(){
+          elem.classList.remove('shake');
+        }, 500)
+    }, 5000)
+  };
 
-   getCity.addEventListener('click', function() {
+   getCityWeather.addEventListener('click', function() {
      return weather.showCityWeather();
    });
    myGeoWeather.addEventListener('click', function() {
      return weather.showWeather();
-   })
-
-
-   choiseCityName.onkeyup = function (e) {
-    e = e || window.event;
-    if (e.keyCode === 13) {
-        return weather.showCityWeather();
-    }
-    // Отменяем действие браузера
-    return false;
-}
+   });
