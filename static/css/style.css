@@ -26,18 +26,31 @@ margin: 0 auto;
     right: 10px;
 
 }
+#search {
+  height: 30px;
+  position: relative;
+}
 #choiseCityName {
   height: 30px;
   border: none;
+  padding-right: 30px;
 }
-
 .dropdown-item > div > strong{
     float: right;
     color: #c1c1c1
 }
-
 #getCityWeather {
-  padding: 4px 12px;
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  width: 28px;
+  height: 28px;
+  background: url(../img/search.png) no-repeat 50% 50% / 50%;
+  padding: 1px 0px;
+  background-color: #fff;
+  cursor: pointer;
+}
+#getCityWeather:hover {
   background-color: #e0e0e0;
 }
 .currentWeather {

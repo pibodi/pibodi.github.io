@@ -69,5 +69,5 @@ const weather = {
     }, 5000)
   };
 
-   getCityWeather.addEventListener('click', weather.showCityWeather);
-   myGeoWeather.addEventListener('click',  weather.showWeather);
+   getCityWeather.addEventListener('click', () => weather.showCityWeather());
+   myGeoWeather.addEventListener('click', () =>  weather.showWeather());
