@@ -1,5 +1,5 @@
 
-window.onload = function() {
+window.onload = () => {
     weather.showWeather();
      shake(myGeoWeather);
 };
@@ -60,19 +60,14 @@ const weather = {
       }
       return icon.setAttribute('data-icon', data);
   };
-
     function shake(elem) {
-      setInterval(function(){
+      setInterval(() => {
         elem.classList.add('shake');
-        setTimeout(function(){
+        setTimeout(() => {
           elem.classList.remove('shake');
         }, 500)
     }, 5000)
   };
 
-   getCityWeather.addEventListener('click', function() {
-     return weather.showCityWeather();
-   });
-   myGeoWeather.addEventListener('click', function() {
-     return weather.showWeather();
-   });
+   getCityWeather.addEventListener('click', weather.showCityWeather);
+   myGeoWeather.addEventListener('click',  weather.showWeather);
