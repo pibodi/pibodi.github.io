@@ -8,14 +8,7 @@ $input.typeahead({
     	return item.name;
     },
     afterSelect: function(item) {
-      $('#choiseCityName').on('keyup',function(e) {
-       e = e || window.event;
-       if (e.keyCode === 13) {
-         $input.val(item.name)
-          return weather.showCityWeather($input.val());
-       }
-       return false;
-   });
+      
       return weather.showCityWeather($input.val())
     },
     highlighter: function(item, data) {
