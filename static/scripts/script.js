@@ -1,20 +1,20 @@
 
 window.onload = () => {
     weather.showWeather();
-     shake(myGeoWeather);
+    shake(myGeoWeather);
 };
 // Weather object
 const weather = {
     showWeather() {
       let getPosition = (position) => {
-      let link = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=75794b9ace3c41343121677d196d1d07`;
-      this.getRequest(link);
+      let url = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=75794b9ace3c41343121677d196d1d07`;
+      return getJson(url);
       }
       return navigator.geolocation.getCurrentPosition(getPosition);
     },
     showCityWeather() {
-      let link = `https://api.openweathermap.org/data/2.5/weather?q=${choiseCityName.value}&units=metric&appid=75794b9ace3c41343121677d196d1d07`;
-      return this.getRequest(link);
+      let url = `https://api.openweathermap.org/data/2.5/weather?q=${choiseCityName.value}&units=metric&appid=75794b9ace3c41343121677d196d1d07`;
+      return getJson(url);
     },
     showWeatherData(response) {
       let descrpt = response.weather[0].description;
@@ -28,17 +28,7 @@ const weather = {
       showIcon(response);
       indicators.innerHTML = responseTemplate;
     },
-    getRequest(link) {
-      fetch(link).then( response => {
-          if (response.ok) {
-            return response.json();
-          }
-          throw new Error(`Error: status ${response.status}.`);
-        }).then(response => {
-            return this.showWeatherData(response);
-          })
-    },
-};
+      };
 // Functions
   function showIcon(response, data = ')') {
     var id = response.weather[0].icon;
