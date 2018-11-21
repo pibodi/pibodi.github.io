@@ -11,5 +11,12 @@ jQuery(document).ready(function(){
           return `<div>${item}<strong>${data.country}</strong></div>`
       },
     });
-  },'json')
+  },'json');
+
+
+});
+$('#choiseCityName').keydown(function(e) {
+  if (e.keyCode === 13) {
+    return weather.showCityWeather($("#choiseCityName").val())
+  }
 });
