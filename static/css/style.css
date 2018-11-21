@@ -60,9 +60,9 @@ margin: 0 auto;
 
 
 .dropdown-item > div > strong{
-    float: right;
-    color: #c1c1c1;
-    margin-left: 10px;
+  float: right;
+ color: #c1c1c1;
+  margin-left: 10px;
 }
 #getCityWeather {
   position: absolute;
@@ -81,6 +81,7 @@ margin: 0 auto;
 .currentWeather {
   border: 1px solid #fff;
   margin-top: 15px;
+  min-height: 95px;
 }
 #indicators > div{
 text-align: center;
