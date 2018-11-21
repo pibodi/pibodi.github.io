@@ -35,9 +35,34 @@ margin: 0 auto;
   border: none;
   padding-right: 30px;
 }
+#choiseCityName.placeholderOk::-webkit-input-placeholder {
+  color: grey;
+}#choiseCityName.placeholderOk::-moz-placeholder {
+  color: grey;
+}#choiseCityName.placeholderOk:-moz-placeholder {
+  color: grey;
+}#choiseCityName.placeholderOk:-ms-input-placeholder  {
+  color: grey;
+}
+
+#choiseCityName.placeholderred::-webkit-input-placeholder {
+   color: red;
+}
+#choiseCityName.placeholderred::-moz-placeholder {
+   color: red;
+}
+#choiseCityName.placeholderred:-moz-placeholder {
+   color: red;
+}
+#choiseCityName.placeholderred:-ms-input-placeholder {
+   color: red;
+}
+
+
 .dropdown-item > div > strong{
     float: right;
-    color: #c1c1c1
+    color: #c1c1c1;
+    margin-left: 10px;
 }
 #getCityWeather {
   position: absolute;
