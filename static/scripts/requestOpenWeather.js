@@ -8,21 +8,23 @@
       okFunc(json);
   }
 
-  let input = document.getElementById('choiseCityName');
+  let $input = document.getElementById('choiseCityName');
   const okFunc = (json) => {
     try {
       if (json.cod != "404" && !json.cod) {
-       input.placeholder = 'Please enter a your city name.';
-       input.classList.remove('placeholderred');
-       input.classList.add('placeholderOk');
-       input.focus();
+      $input.placeholder = 'Please enter a your city name.';
+      $input.classList.remove('placeholderred');
+      $input.classList.add('placeholderOk');
+      $input.focus();
      }
        else if (json.cod == '200') {
-         return weather.showWeatherData(json);
+         weather.showWeatherData(json);
+        $input._tippy.destroy();
+        $input.focus();
        }
        else {
          throw new Error();
-       }  
+       }
     } catch (err) {
        errorFunc(json);
     }
@@ -34,9 +36,21 @@
         return console.log(new Error('json undefined'))
       }
       if (json.cod == '404')  {
-        input.value = '';
-        input.classList.add('placeholderred');
-        input.placeholder = "Sorry we can not find your city";
+        tippy($input, {
+          content: "Sorry we can not find your city",
+          placement: 'top',
+          delay: [20, 0],
+          interactive: true,
+          showOnInit: true,
+          trigger: ' click',
+          onShown($input) {
+           $input.focus()
+         },
+          size: "regular"
+        }
+
+      )
+       $input._tippy.show();
         return console.log( new Error(`${json.cod} ${json.message}`));
       } else {
           return console.log( new Error(`${json.cod} ${json.message}`));
