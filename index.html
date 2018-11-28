@@ -7,17 +7,20 @@
   <script src="static/scripts/jquery-3.3.1.min.js" charset="utf-8"></script>
   <script src="static/scripts/bootstrap3-typeahead.min.js" charset="utf-8"></script>
   <script src="https://unpkg.com/tippy.js@3/dist/tippy.all.min.js"></script>
+  <script src="static/scripts/moment.js" charset="utf-8"></script>
+  <script src="static/scripts/Chart.min.js" charset="utf-8"></script>
   <link rel="stylesheet" href="static/css/bootstrap.css">
   <link rel="stylesheet" href="static/css/stylesheet.css">
   <link rel="stylesheet" href="static/css/style.css">
-  <title>Document</title>
+    <title>Document</title>
+
 </head>
 <body>
   <div id="weather" class="container">
-    <div id="header">
+    <header id="header">
       <h1>My weather</h1>
       <button id="myGeoWeather" class="btn " type="button" name="button"></button>
-    </div>
+    </header>
     <div class="container">
       <div class=" inputsGroup container col-xs-12 col-sm-6 col-md-4 col-lg-4 col-sm-offset-3 col-md-offset-4 col-lg-offset-4  ">
         <div id="search">
@@ -30,10 +33,16 @@
         </div>
         <div id="icon" class="col-xs-5 col-sm-5 col-md-5 col-lg-5 "></div>
       </div>
+      <div id="chart" class="col-xs-12 col-sm-6 col-md-4 col-lg-4  col-sm-offset-3 col-md-offset-4 col-lg-offset-4">
+        <canvas id="myChart" aria-label="Hello ARIA World" role="chart">
+      </div>
+      </canvas>
     </div>
+    <footer><a href="https://openweathermap.org/" target="_blank">Openweathermap.org</a></footer>
   </div>
   <script src="static/scripts/requestOpenWeather.js" charset="utf-8"></script>
   <script src="static/scripts/script.js" charset="utf-8"></script>
   <script src="static/scripts/myTypeAheadScript.js" charset="utf-8"></script>
+  <script src="static/scripts/myCharts.js" charset="utf-8"></script>
 </body>
 </html>
