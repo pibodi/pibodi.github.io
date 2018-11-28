@@ -7,31 +7,35 @@ window.onload = () => {
 const weather = {
     showWeather() {
       let getPosition = (position) => {
-      let url = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=75794b9ace3c41343121677d196d1d07`;
+      let url = `https://api.openweathermap.org/data/2.5/forecast?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=75794b9ace3c41343121677d196d1d07`;
       return getJson(url);
       }
       return navigator.geolocation.getCurrentPosition(getPosition);
     },
     showCityWeather() {
-      let url = `https://api.openweathermap.org/data/2.5/weather?q=${choiseCityName.value}&units=metric&appid=75794b9ace3c41343121677d196d1d07`;
+      let url = `https://api.openweathermap.org/data/2.5/forecast?q=${choiseCityName.value}&units=metric&appid=75794b9ace3c41343121677d196d1d07`;
       return getJson(url);
     },
-    showWeatherData(response) {
-      let descrpt = response.weather[0].description;
+    showWeatherData(response, i = 0) {
+
+      let descrpt = response.list[i].weather[0].description;
       descrpt =  descrpt[0].toUpperCase() + descrpt.slice(1);
+      let date = moment(response.list[i].dt_txt).format('MMM Do HH:mm')
       let responseTemplate = `
-        <div id="cityName">${response.name}</div>
-        <div id="temperature">${response.main.temp} &deg;C</div>
-        <div id="humidity">Hymidity: ${response.main.humidity} %</div>
+        <div id="cityName">${response.city.name}</div>
+        <div id="temperature">${Math.round(response.list[i].main.temp)} &deg;C</div>
+        <div id="humidity">Hymidity: ${response.list[i].main.humidity} %</div>
         <div id="description"> ${descrpt} </div>
+        <div id="date"> ${date}</div>
         `;
-      showIcon(response);
+      showIcon(response, i);
       indicators.innerHTML = responseTemplate;
     },
       };
 // Functions
-  function showIcon(response, data = ')') {
-    var id = response.weather[0].icon;
+  function showIcon(response, i) {
+    let data = ')' // when n/a icon
+    let id = response.list[i].weather[0].icon;
     let codes = {
       day: {
         B: ['01d'], // Clear
@@ -79,4 +83,3 @@ const weather = {
   };
 
    getCityWeather.addEventListener('click', () => weather.showCityWeather());
-   myGeoWeather.addEventListener('click', () =>  weather.showWeather());
