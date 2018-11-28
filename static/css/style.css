@@ -8,13 +8,36 @@ body {
 
 
 #weather {
+  position: relative;
   background-color: #70adb3;
   height: 100%;
+
 }
-#header {
+header {
   width: 240px;
-position: relative;
-margin: 0 auto;
+  position: relative;
+  margin: 0 auto;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+footer a:link {
+  color: #333;
+  text-decoration: none;
+}
+footer a:visited  {
+  color: #333111;
+  text-decoration: none;
+}
+footer a:hover {
+  color: #333777;
+  text-decoration: none;
+}
+footer a:active {
+  color: #333777;
+  text-decoration: none;
 }
 #myGeoWeather {
   width: 40px;
@@ -35,30 +58,6 @@ margin: 0 auto;
   border: none;
   padding-right: 30px;
 }
-#choiseCityName.placeholderOk::-webkit-input-placeholder {
-  color: grey;
-}#choiseCityName.placeholderOk::-moz-placeholder {
-  color: grey;
-}#choiseCityName.placeholderOk:-moz-placeholder {
-  color: grey;
-}#choiseCityName.placeholderOk:-ms-input-placeholder  {
-  color: grey;
-}
-
-#choiseCityName.placeholderred::-webkit-input-placeholder {
-   color: red;
-}
-#choiseCityName.placeholderred::-moz-placeholder {
-   color: red;
-}
-#choiseCityName.placeholderred:-moz-placeholder {
-   color: red;
-}
-#choiseCityName.placeholderred:-ms-input-placeholder {
-   color: red;
-}
-
-
 .dropdown-item > div > strong{
   float: right;
  color: #c1c1c1;
@@ -106,10 +105,27 @@ height: 20px;
 	content: attr(data-icon);
   font-size: 60px;
 }
+#chart {
+  overflow-x: scroll;
+  margin-top: 10px;
+  border: 1px solid #fff;
+  padding: 0;
+  /* scroll-behavior: smooth; */
+}
+
+#chart canvas {
+  width: 800px !important;
+  height: 400px !important;
+}
+
+.canvasImportant {
+  width: 800px !important;
+  height: 400px !important;
+}
 textarea,
-input[type="text"],
-input[type="button"],
-input[type="submit"] {
+input[type='text'],
+input[type='button'],
+input[type='submit'] {
      -webkit-appearance: none;
      border-radius: 0;
 }
