@@ -16,6 +16,7 @@
           $input._tippy.destroy();
         }
         $input.focus();
+        createChart(json);
         return weather.showWeatherData(json);
        }
        else {
@@ -33,10 +34,10 @@
       }
       if (json.cod == '404')  {
         tippy($input, tippy_options);
-        return console.log( new Error(`${json.cod} ${json.message}`));
+        return console.log(new Error(`${json.cod} ${json.message}`));
       }
       else {
-        return console.log( new Error(`${json.cod} ${json.message}`));
+        return console.log(new Error(`${json.cod} ${json.message}`));
       }
     } catch (err) {
         console.log(err);
@@ -46,7 +47,7 @@
 
 
 let tippy_options = {
-  content: "Sorry we can not find your city",
+  content: 'Sorry we can not find your city',
   placement: 'top',
   delay: [20, 0],
   interactive: true,
@@ -55,5 +56,5 @@ let tippy_options = {
   onShown() {
    $input.focus()
  },
-  size: "regular",
+  size: 'regular',
 }
