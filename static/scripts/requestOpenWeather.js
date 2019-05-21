@@ -13,10 +13,10 @@
     try {
       if (json.cod == '200') {
          dataLayer.push({
-              'event': 'click',
-              'category': 'form_callback',
-              'action': 'callback_sf'
-        });
+          "event": "Ajax_request",
+          'category': 'get_weather',
+          'action': 'ajax_request'
+        })
         if ($input._tippy) {
           $input._tippy.destroy();
         }
