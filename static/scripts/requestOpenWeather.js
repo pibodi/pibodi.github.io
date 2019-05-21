@@ -12,11 +12,11 @@
   const okFunc = (json) => {
     try {
       if (json.cod == '200') {
-        dataLayer.push({
-          "event": "Ajax_request",
-          'category': 'get_weather',
-          'action': 'ajax_request'
-        })
+         dataLayer.push({
+              'event': 'click',
+              'category': 'form_callback',
+              'action': 'callback_sf'
+        });
         if ($input._tippy) {
           $input._tippy.destroy();
         }
