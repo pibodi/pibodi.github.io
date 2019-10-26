@@ -27,7 +27,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2WRJNP"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-  <div id="weather" class="container">
+  <script
+      defer
+      src="https://app.chatterb0x.ru/chatterb0x.min.js"
+      onload="Chatterb0x({
+          bot: '5db36c33448b390027e6152b',
+          type: 'windowed',
+          mountNode: "root"
+      })">
+    </script>
+<!--   <div id="weather" class="container">
     <header id="header">
       <h1>My weather</h1>
       <button id="myGeoWeather" class="btn " type="button" name="button"></button>
@@ -50,7 +59,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </canvas>
     </div>
     <footer><a href="https://openweathermap.org/" target="_blank">Openweathermap.org</a></footer>
-  </div>
+  </div> -->
   <script src="static/scripts/requestOpenWeather.js" charset="utf-8"></script>
   <script src="static/scripts/script.js" charset="utf-8"></script>
   <script src="static/scripts/myTypeAheadScript.js" charset="utf-8"></script>
