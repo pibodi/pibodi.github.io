@@ -39,19 +39,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <button class="one_params">Событие с 1 параметром</button>
 <script>
 $('.three_params').on('click', function(){
+    dataLayer.push({params: undefined});
     dataLayer.push(
     {
         event: 'event_product_ga4_test1',
         eventCategory: 'Test',
         params: {
-            test_param1 : "123",
+            name : "123",
             test_param2: "b",
-            test_param3: "sfssaf",
+            test_param3: "32",
         }
     }
     );
 });
 $('.one_params').on('click', function(){
+    dataLayer.push({params: undefined});
     dataLayer.push(
     {
         event: 'event_product_ga4_test2',
