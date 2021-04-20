@@ -20,7 +20,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="stylesheet" href="static/css/stylesheet.css">
   <link rel="stylesheet" href="static/css/style.css"> -->
     <title>TEST GA SNTO</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=MEASUREMENT_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-MWQSVY7G28');
+  </script>
 </head>
 <body>
  <!-- Google Tag Manager (noscript) -->
@@ -37,9 +44,9 @@ $('.three_params').on('click', function(){
         event: 'event_product_ga4_test1',
         eventCategory: 'Test',
         params: {
-            param1: {name: 'test_param1', value: "123"},
-            param2: {name: 'test_param2', value: "123"},
-            param3: {name: 'test_param3', value: "123"},
+            test_param1 : "123",
+            test_param2: "b",
+            test_param3: "sfssaf",
         }
     }
     );
@@ -50,12 +57,12 @@ $('.one_params').on('click', function(){
         event: 'event_product_ga4_test2',
         eventCategory: 'Test',
         params: {
-            param1: {name: 'test_param1', value: "123"},
-            param2: {name: 'test_param2', value: "123"},
-        }
-    }
+             test_param1 : "14124124",
+             test_param2 : 124124,
+    }}
     );
 });
+
 
   </script>
   
