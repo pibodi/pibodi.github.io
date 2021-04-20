@@ -11,7 +11,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-WMJW7MG');</script>
 <!-- End Google Tag Manager -->
-<!--   <script src="static/scripts/jquery-3.3.1.min.js" charset="utf-8"></script>
+  <script src="static/scripts/jquery-3.3.1.min.js" charset="utf-8"></script><!--
   <script src="static/scripts/bootstrap3-typeahead.min.js" charset="utf-8"></script>
   <script src="https://unpkg.com/tippy.js@3/dist/tippy.all.min.js"></script>
   <script src="static/scripts/moment.js" charset="utf-8"></script>
@@ -28,8 +28,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-
-dataLayer.push(
+<button class="three_params">Событие с 3 параметрами</button>
+<button class="one_params">Событие с 1 параметром</button>
+<script>
+$('.three_params').on('click', function(){
+    dataLayer.push(
     {
         event: 'event_product_ga4_test1',
         eventCategory: 'Test',
@@ -40,8 +43,21 @@ dataLayer.push(
         }
     }
     );
+});
+$('.one_params').on('click', function(){
+    dataLayer.push(
+    {
+        event: 'event_product_ga4_test2',
+        eventCategory: 'Test',
+        params: {
+            param1: {name: 'test_param1', value: "123"},
+            param2: {name: 'test_param2', value: "123"},
+        }
+    }
+    );
+});
 
-  
+  </script>
   
   
 <!--   
