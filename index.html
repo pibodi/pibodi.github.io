@@ -4,99 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- Google Tag Manager -->
+    <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WMJW7MG');</script>
-<!-- End Google Tag Manager -->
-  <script src="static/scripts/jquery-3.3.1.min.js" charset="utf-8"></script><!--
-  <script src="static/scripts/bootstrap3-typeahead.min.js" charset="utf-8"></script>
-  <script src="https://unpkg.com/tippy.js@3/dist/tippy.all.min.js"></script>
-  <script src="static/scripts/moment.js" charset="utf-8"></script>
-  <script src="static/scripts/Chart.min.js" charset="utf-8"></script>
-  <link rel="stylesheet" href="static/css/bootstrap.css">
-  <link rel="stylesheet" href="static/css/stylesheet.css">
-  <link rel="stylesheet" href="static/css/style.css"> -->
-    <title>TEST GA SNTO</title>
-<script async src="https://www.googletagmanager.com/gtag/js?id=MEASUREMENT_ID"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-MWQSVY7G28',{'debug_mode':true});
-  </script>
-</head>
-<body>
- <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMJW7MG"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-<button class="three_params">Событие с 3 параметрами</button>
-<button class="one_params">Событие с 1 параметром</button>
-<script>
-$('.three_params').on('click', function(){
-    dataLayer.push({params: undefined});
-    dataLayer.push(
-    {
-        event: 'event_product_ga4_test1',
-        eventCategory: 'Test',
-        params: {
-            name : "123",
-            test_param2: "b",
-            test_param3: "32",
-        }
-    }
-    );
-});
-$('.one_params').on('click', function(){
-    dataLayer.push({params: undefined});
-    dataLayer.push(
-    {
-        event: 'event_product_ga4_test2',
-        eventCategory: 'Test',
-        params: {
-             test_param1 : "14124124",
-             test_param2 : 124124,
-    }}
-    );
-});
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MNXPNZW');</script>
+    <!-- End Google Tag Manager -->
+  <script src="static/scripts/jquery-3.3.1.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+      <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MNXPNZW"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <script>
+        dataLayer.push({
+            'ecommerce': {
+                'detail': {
+                    'actionField': {'list': 'Apparel Gallery'},    // 'detail' actions have an optional list property.
+                    'products': [{
+                    'name': 'test1',         // Name or ID is required.
+                    'id': '12345',
+                    'price': '15.25',
+                    'brand': 'Google',
+                    'category': 'Apparel',
+                    'variant': 'Gray'
+                    },
+                    {
+                    'name': 'test2',         // Name or ID is required.
+                    'id': '54321',
+                    'price': '15.25',
+                    'brand': 'Google',
+                    'category': 'Apparel',
+                    'variant': 'Gray'
+                    },
+                ]
+                    }
+                }
+        })
+    </script>
 
 
-  </script>
-  
-  
-<!--   
-<div id="weather" class="container">
-    <header id="header">
-      <h1>My weather</h1>
-      <button id="myGeoWeather" class="btn " type="button" name="button"></button>
-    </header>
-    <div class="container">
-      <div class=" inputsGroup container col-xs-12 col-sm-6 col-md-4 col-lg-4 col-sm-offset-3 col-md-offset-4 col-lg-offset-4  ">
-        <div id="search">
-          <input id="choiseCityName"  class="col-xs-12 col-sm-12 col-md-12 col-lg-12  typeahed" type="text" placeholder="Please enter a your city name." value="" data-provide="typeahead" data-tippy="">
-          <span id="getCityWeather" class="search-icon"></span>
-        </div>
-      </div>
-      <div class="currentWeather container  col-xs-12 col-sm-6 col-md-4 col-lg-4  col-sm-offset-3 col-md-offset-4 col-lg-offset-4">
-        <div id="indicators" class=" col-xs-7 col-sm-7 col-md-7 col-lg-7">
-        </div>
-        <div id="icon" class="col-xs-5 col-sm-5 col-md-5 col-lg-5 "></div>
-      </div>
-      <div id="chart" class="col-xs-12 col-sm-6 col-md-4 col-lg-4  col-sm-offset-3 col-md-offset-4 col-lg-offset-4">
-        <canvas id="myChart" aria-label="Hello ARIA World" role="chart">
-      </div>
-      </canvas>
-    </div>
-    <footer><a href="https://openweathermap.org/" target="_blank">Openweathermap.org</a></footer>
-  </div> -->
-<!--   <script src="static/scripts/requestOpenWeather.js" charset="utf-8"></script>
-  <script src="static/scripts/script.js" charset="utf-8"></script>
-  <script src="static/scripts/myTypeAheadScript.js" charset="utf-8"></script>
-  <script src="static/scripts/myCharts.js" charset="utf-8"></script> -->
 </body>
 </html>
