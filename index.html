@@ -41,6 +41,11 @@
                     },
                 ]
                     },
+        }})
+                
+                dataLayer.push({
+                    'event': 'ga-event',
+                    'ecommerce': {
                     'purchase': {
                         'actionField': {
                         'id': Math.floor((Math.random() * 40) + 50),                         // Transaction ID. Required for purchases and refunds.
@@ -63,7 +68,8 @@
                     }
                 
                 }
-        })
+        }
+        )
     </script>
 
 
