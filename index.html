@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
  
 <script>(function (w, d, s, l, i) {
-  var start =  performance.now();
+ 
   w[l] = w[l] || [];
   w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
   var f = d.getElementsByTagName(s)[0],
@@ -18,7 +18,7 @@
     console.log( performance.now() - start)
   }
   f.parentNode.insertBefore(j, f);
-})(window, document, "script", "dataLayer", "GTM-MNXPNZW");
+})(window, document, "script", "dataLayer", "GTM-MNXPNZW", function(){ var start =  performance.now();});
 </script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
