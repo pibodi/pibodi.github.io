@@ -7,7 +7,7 @@
  
 <script>
   (function (w, d, s, l, i) {
- 
+  
   w[l] = w[l] || [];
   w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
   
@@ -16,9 +16,9 @@
     dl = l != "dataLayer" ? "&l=" + l : "";
   j.async = true;
   j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-   var start =  performance.now();
+  var start =  new Date().getTime();
   j.onload = function() {
-    console.log( performance.now() - start)
+    console.log(new Date().getTime() - start)
   }
   f.parentNode.insertBefore(j, f);
 })(window, document, "script", "dataLayer", "GTM-MNXPNZW");
