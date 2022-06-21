@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
  
 <script>(function (w, d, s, l, i) {
-  var start = new Date().getTime();
+  var start =  performance.now();
   w[l] = w[l] || [];
   w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
   var f = d.getElementsByTagName(s)[0],
@@ -15,7 +15,7 @@
   j.async = true;
   j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
   j.onload = function() {
-    console.log(new Date().getTime() - start)
+    console.log( performance.now() - start)
   }
   f.parentNode.insertBefore(j, f);
 })(window, document, "script", "dataLayer", "GTM-MNXPNZW");
