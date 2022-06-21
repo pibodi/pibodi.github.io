@@ -6,22 +6,25 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
  
 <script>
-  (function (w, d, s, l, i) {
-  
+(function (w, d, s, l, i) {
   w[l] = w[l] || [];
   w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-  
+  console.log(w[l]);
+  var start = new Date().getTime();
   var f = d.getElementsByTagName(s)[0],
     j = d.createElement(s),
     dl = l != "dataLayer" ? "&l=" + l : "";
   j.async = true;
   j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-  var start =  new Date().getTime();
-  j.onload = function() {
-    console.log(new Date().getTime() - start)
-  }
+  console.log(w[l]);
+  j.onload = function () {
+    console.log(
+      new Date().getTime() - start - (new Date().getTime() - start) * 0.1
+    );
+  };
   f.parentNode.insertBefore(j, f);
 })(window, document, "script", "dataLayer", "GTM-MNXPNZW");
+
 </script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
